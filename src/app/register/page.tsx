@@ -16,7 +16,7 @@ const RegisterPage = () => {
     e.preventDefault();
 
     try {
-      const data = await register(name, password, role); // Chama o serviço de registro
+      await register(name, password, role); // Chama o serviço de registro
       setSuccessMessage('Usuário registrado com sucesso!'); // Mostra mensagem de sucesso
       setError(''); // Limpa possíveis erros
     } catch (error) {
