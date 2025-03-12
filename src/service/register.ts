@@ -1,5 +1,5 @@
 export const register = async (name: string, password: string, role: string) => {
-    const response = await fetch("http://localhost:8080/auth/register", {
+    const response = await fetch("https://hall-axq2.onrender.com/auth/register", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
