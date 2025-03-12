@@ -7,7 +7,6 @@ import { register } from '@/service/register'; // Importa o serviço de registro
 const RegisterPage = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('USER');  // A role pode ser USER, ADMIN, etc.
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const router = useRouter();  // Instancia o hook para navegação
@@ -16,7 +15,7 @@ const RegisterPage = () => {
     e.preventDefault();
 
     try {
-      await register(name, password, role); // Chama o serviço de registro
+      await register(name, password, 'USER'); // A role sempre será 'USER'
       setSuccessMessage('Usuário registrado com sucesso!'); // Mostra mensagem de sucesso
       setError(''); // Limpa possíveis erros
     } catch (error) {
@@ -49,16 +48,6 @@ const RegisterPage = () => {
               placeholder="Senha"
               required
             />
-          </div>
-          <div className="mb-4">
-            <select
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-              className="w-full px-4 py-2 border rounded-lg"
-            >
-              <option value="USER">Usuário</option>
-              <option value="ADMIN">Administrador</option>
-            </select>
           </div>
           <button type="submit" className="w-full bg-green-500 text-white py-2 rounded-lg">
             Registrar
