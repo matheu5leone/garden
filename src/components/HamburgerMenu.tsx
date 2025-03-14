@@ -27,7 +27,7 @@ const HamburgerMenu = () => {
         <div className="absolute top-12 right-0 w-40 bg-white shadow-lg rounded-lg p-2">
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 w-full p-2 text-red-600 hover:bg-gray-100 rounded-md"
+            className="flex items-center gap-2 w-full p-2 text-red-600 hover:bg-gray-300 rounded-md"
           >
             <LogOut size={18} /> Logout
           </button>
